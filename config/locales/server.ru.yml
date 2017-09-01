@@ -1,0 +1,4 @@
+ru:
+  site_settings:
+    lm_layouts_articles_data: "Список статей для сайдбара в формате JSON"
+    lm_layouts_articles_count: "Количество статей в виджете"

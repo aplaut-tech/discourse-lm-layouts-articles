@@ -1,4 +1,7 @@
 plugins:
-  layouts_custom_html:
-    default: ''
+  lm_layouts_articles_data:
+    default: '[{"title":"Моя статья","url":"https://leroymerlin.ru/my-article"}]'
+    client: true
+  lm_layouts_articles_count:
+    default: 2
     client: true
