@@ -24,7 +24,10 @@ export default createWidget('lm-layouts-articles', {
       h('.lm-layouts-articles-heading', 'Полезные статьи'),
       h('.lm-layouts-articles-list', articles.map((article) => {
         return h('.lm-layouts-articles-list-item', [
-          h('a.lm-layouts-articles-link', {src: article.url, target: '_blank', title: article.title}, article.title)
+          h('a.lm-layouts-articles-link', {
+            href: article.url, target: '_blank',
+            title: article.title
+          }, article.title)
         ]);
       }))
     ];
