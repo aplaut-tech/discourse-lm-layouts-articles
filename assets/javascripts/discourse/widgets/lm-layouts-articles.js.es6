@@ -2,6 +2,15 @@ import {createWidget} from 'discourse/widgets/widget';
 import {h} from 'virtual-dom';
 
 
+const arrayShuffle = function (a) {
+  for (let i = a.length; i; i--) {
+    let j = Math.floor(Math.random() * i);
+    [a[i - 1], a[j]] = [a[j], a[i - 1]];
+  }
+  return a;
+}
+
+
 var ARTICLES;
 
 export default createWidget('lm-layouts-articles', {
@@ -11,9 +20,9 @@ export default createWidget('lm-layouts-articles', {
     if (ARTICLES) {
       return ARTICLES;
     } else {
-      return ARTICLES = JSON.parse(this.siteSettings.lm_layouts_articles_data)
-        .sort(() => Math.random() > Math.random())
+      const articles = JSON.parse(this.siteSettings.lm_layouts_articles_data)
         .slice(0, this.siteSettings.lm_layouts_articles_count);
+      return ARTICLES = arrayShuffle(articles);
     }
   },
 
